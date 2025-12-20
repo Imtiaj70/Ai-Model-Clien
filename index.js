@@ -66,7 +66,7 @@ async function run() {
     app.post('/models', async (req, res) => {
       try {
         const modelData = req.body;
-        modelData.purchased = modelData.purchased || 0; // default value
+        modelData.purchased = modelData.purchased || 0; 
         const result = await modelCollection.insertOne(modelData);
         const newModel = await modelCollection.findOne({ _id: result.insertedId });
         res.status(201).json(newModel);
@@ -169,5 +169,6 @@ run();
 app.get('/', (req, res) => res.send('Server is running!'));
 // app.get('/hello', (req, res) => res.send('How are you!'));
 
+module.exports = app;
 
 // app.listen(port, () => console.log(` Server listening on port ${port}`));
