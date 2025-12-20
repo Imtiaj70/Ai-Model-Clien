@@ -25,7 +25,7 @@ let purchaseCollection;
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     const db = client.db('model-db');
     modelCollection = db.collection('models');
     purchaseCollection = db.collection('purchases');
